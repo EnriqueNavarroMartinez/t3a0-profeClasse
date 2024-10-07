@@ -7,60 +7,64 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Imagen del parque -->
     <ImageView
         android:id="@+id/imagen1"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_margin="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:src="@drawable/appimg"
-        tools:ignore="MissingConstraints"></ImageView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Nombre del parque -->
     <EditText
         android:id="@+id/name"
-        android:layout_width="@+id/imagen1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Nombre:"
+        android:hint="Nombre:"
         app:layout_constraintTop_toBottomOf="@id/imagen1"
-        app:layout_constraintEnd_toEndOf="@id/imagen1"
         app:layout_constraintStart_toStartOf="@id/imagen1"
+        app:layout_constraintEnd_toEndOf="@id/imagen1"
+        android:layout_marginTop="0dp"
+       />
 
-></EditText>
-
+    <!-- Descripción del parque -->
     <EditText
-    android:id="@+id/description"
-    android:layout_width="@+id/name"
-    android:layout_height="wrap_content"
-
-    android:text="Descripcion:"
-    app:layout_constraintTop_toBottomOf="@id/name"
-    app:layout_constraintEnd_toEndOf="@id/name"
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Descripción:"
+        app:layout_constraintTop_toBottomOf="@id/name"
         app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintEnd_toEndOf="@id/name" />
 
-    ></EditText>
-
+    <!-- Teléfono del parque -->
     <EditText
-    android:id="@+id/telefono"
-    android:layout_width="@+id/description"
-    android:layout_height="wrap_content"
-    android:text="Descripcion:"
-    app:layout_constraintTop_toBottomOf="@id/description"
-    app:layout_constraintEnd_toEndOf="@id/description"
-    app:layout_constraintStart_toStartOf="@id/description"
+        android:id="@+id/telefono"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Teléfono:"
+        android:inputType="phone"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintStart_toStartOf="@id/description"
+        app:layout_constraintEnd_toEndOf="@id/description"
+       />
 
-    ></EditText>
-
+    <!-- Página web del parque -->
     <EditText
         android:id="@+id/web"
-        android:layout_width="@+id/telefono"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Web:"
+        android:hint="Página web:"
         app:layout_constraintTop_toBottomOf="@id/telefono"
-        app:layout_constraintEnd_toEndOf="@id/telefono"
         app:layout_constraintStart_toStartOf="@id/telefono"
+        app:layout_constraintEnd_toEndOf="@id/telefono"
+       />
 
-        ></EditText>
-
+    <!-- Texto de hora de apertura -->
     <TextView
         android:id="@+id/apertura"
         android:layout_width="wrap_content"
@@ -69,36 +73,88 @@
 
         app:layout_constraintTop_toBottomOf="@id/web"
         app:layout_constraintStart_toStartOf="@id/web"
-></TextView>
+        />
 
+    <!-- Spinner de hora de apertura -->
+    <Spinner
+        android:id="@+id/spinnerapertura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/apertura"
+        app:layout_constraintStart_toStartOf="@id/apertura"
+        />
+
+    <!-- Texto de hora de cierre -->
     <TextView
         android:id="@+id/cerrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hora cierre"
+        app:layout_constraintTop_toTopOf="@id/apertura"
+        app:layout_constraintStart_toEndOf="@id/apertura"
+        android:layout_marginStart="32dp"/>
 
-        app:layout_constraintEnd_toEndOf="@id/web"
-        app:layout_constraintHorizontal_bias="0.649"
-        app:layout_constraintStart_toStartOf="@id/apertura"
-        app:layout_constraintTop_toBottomOf="@id/web"></TextView>
-    
+    <!-- Spinner de hora de cierre -->
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/spinnercierre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:spinnerMode="dialog"
-        app:layout_constraintStart_toStartOf="@id/apertura"
-        app:layout_constraintTop_toBottomOf="@id/apertura"
-        tools:ignore="MissingConstraints"></Spinner>
-
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dialog"
-        app:layout_constraintStart_toStartOf="@id/cerrar"
         app:layout_constraintTop_toBottomOf="@id/cerrar"
-        tools:ignore="MissingConstraints"></Spinner>
+        app:layout_constraintStart_toStartOf="@id/cerrar"
+      />
+
+    <!-- Texto para las actividades del parque -->
+    <TextView
+        android:id="@+id/tituloactividades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actividades disponibles:"
+        app:layout_constraintTop_toBottomOf="@id/spinnerapertura"
+        app:layout_constraintStart_toStartOf="@id/apertura"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Casilla de verificación para instalaciones deportivas -->
+    <CheckBox
+        android:id="@+id/cb_instalacionesdeportivas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instalaciones deportivas"
+        app:layout_constraintTop_toBottomOf="@id/tituloactividades"
+        app:layout_constraintStart_toStartOf="@id/tituloactividades"
+       />
+
+    <!-- Casilla de verificación para parque infantil -->
+    <CheckBox
+        android:id="@+id/cb_parqueinfantil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parque infantil"
+        app:layout_constraintTop_toBottomOf="@id/cb_instalacionesdeportivas"
+        app:layout_constraintStart_toStartOf="@id/cb_instalacionesdeportivas"
+      />
+
+    <!-- Casilla de verificación para zona de restauración -->
+    <CheckBox
+        android:id="@+id/cb_zonarestauracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zona de restauración"
+        app:layout_constraintTop_toBottomOf="@id/cb_parqueinfantil"
+        app:layout_constraintStart_toStartOf="@id/cb_parqueinfantil"
+        />
+
+    <!-- Botón para guardar -->
+    <Button
+        android:id="@+id/btnguardar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        android:text="Guardar"
+        app:layout_constraintEnd_toEndOf="@id/name"
+        app:layout_constraintStart_toStartOf="@id/cb_zonarestauracion"
+        app:layout_constraintTop_toBottomOf="@id/cb_zonarestauracion" />
+
 
 
 
