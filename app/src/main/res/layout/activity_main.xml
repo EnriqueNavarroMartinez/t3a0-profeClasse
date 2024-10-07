@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imagen1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/appimg"
+        tools:ignore="MissingConstraints"></ImageView>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="@+id/imagen1"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Nombre:"
+        app:layout_constraintTop_toBottomOf="@id/imagen1"
+        app:layout_constraintEnd_toEndOf="@id/imagen1"
+        app:layout_constraintStart_toStartOf="@id/imagen1"
+
+></EditText>
+
+    <EditText
+    android:id="@+id/description"
+    android:layout_width="@+id/name"
+    android:layout_height="wrap_content"
+
+    android:text="Descripcion:"
+    app:layout_constraintTop_toBottomOf="@id/name"
+    app:layout_constraintEnd_toEndOf="@id/name"
+        app:layout_constraintStart_toStartOf="@id/name"
+
+    ></EditText>
+
+    <EditText
+    android:id="@+id/telefono"
+    android:layout_width="@+id/description"
+    android:layout_height="wrap_content"
+    android:text="Descripcion:"
+    app:layout_constraintTop_toBottomOf="@id/description"
+    app:layout_constraintEnd_toEndOf="@id/description"
+    app:layout_constraintStart_toStartOf="@id/description"
+
+    ></EditText>
+
+    <EditText
+        android:id="@+id/web"
+        android:layout_width="@+id/telefono"
+        android:layout_height="wrap_content"
+        android:text="Web:"
+        app:layout_constraintTop_toBottomOf="@id/telefono"
+        app:layout_constraintEnd_toEndOf="@id/telefono"
+        app:layout_constraintStart_toStartOf="@id/telefono"
+
+        ></EditText>
+
+    <TextView
+        android:id="@+id/apertura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hora apertura"
+
+        app:layout_constraintTop_toBottomOf="@id/web"
+        app:layout_constraintStart_toStartOf="@id/web"
+></TextView>
+
+    <TextView
+        android:id="@+id/cerrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hora cierre"
+
+        app:layout_constraintEnd_toEndOf="@id/web"
+        app:layout_constraintHorizontal_bias="0.649"
+        app:layout_constraintStart_toStartOf="@id/apertura"
+        app:layout_constraintTop_toBottomOf="@id/web"></TextView>
+    
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        app:layout_constraintStart_toStartOf="@id/apertura"
+        app:layout_constraintTop_toBottomOf="@id/apertura"
+        tools:ignore="MissingConstraints"></Spinner>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        app:layout_constraintStart_toStartOf="@id/cerrar"
+        app:layout_constraintTop_toBottomOf="@id/cerrar"
+        tools:ignore="MissingConstraints"></Spinner>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
